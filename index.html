@@ -3,145 +3,161 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Kiruthika Raja - Portfolio</title>
+    <title>Kiru</title>
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
     <!-- Navigation -->
     <nav class="navbar">
         <div class="nav-container">
-            <div class="logo">KR</div>
+            <div class="logo">
+                <span class="logo-swatch"></span>
+                <span class="logo-text">kiru.</span>
+            </div>
             <div class="nav-links">
-                <button class="nav-link active" data-page="home">home</button>
-                <button class="nav-link" data-page="projects">projects</button>
-                <button class="nav-link" data-page="blog">blog</button>
+                <button class="nav-link active" data-page="work">work</button>
+                <button class="nav-link" data-page="photos">photos</button>
+                <button class="nav-link" data-page="notes">notes</button>
+                <button class="nav-link" data-page="about">about</button>
             </div>
         </div>
     </nav>
 
-    <!-- Home Page -->
-    <section id="home" class="page active">
-        <div class="home-container">
-            <!-- Profile Card -->
-            <div class="profile-card">
-                <div class="profile-image">
-                    <div class="profile-initials">KR</div>
-                </div>
-                <div class="profile-info">
-                    <h3 class="profile-name">Kiruthika Raja</h3>
-                    <p class="profile-title">AI/ML Researcher</p>
-                    <div class="profile-details">
-                        <span>CMU</span>
-                        <span class="dot">•</span>
-                        <span>MS ECE</span>
-                    </div>
-                </div>
-            </div>
+    <!-- About / Home Page -->
+    <section id="about" class="page active">
+        <div class="page-container about-page">
+            <figure class="hero-figure">
+                <img src="images/rainier.JPG" alt="Sunrise over the clouds from a mountain ridge" class="hero-image">
+                <figcaption class="hero-caption">Washington, 2026</figcaption>
+            </figure>
 
-            <!-- Hero Content -->
-            <div class="hero-content">
-                <h1 class="hero-title">Kiruthika Raja</h1>
-                <p class="hero-description">
-                    MS ECE student at Carnegie Mellon University, specializing in artificial intelligence and machine learning. Building intelligent systems that make an impact.
+            <div class="about-content">
+                <h1 class="about-heading">Hi, I'm Kiruthika Raja but you can call me Kiru.</h1>
+
+                <p class="about-text">
+                    I'm an AI/ML engineer and master's student at <a href="https://www.cmu.edu/" target="_blank" class="inline-link">Carnegie Mellon</a>, where I explore how AI can be useful, reliable, and enjoyable to use. Most recently, I was an AI intern at <a href="https://www.t-mobile.com/" target="_blank" class="inline-link">T-Mobile</a>, working on evaluation and reliability for production conversational AI.
                 </p>
 
-                <!-- Social Links -->
-                <div class="social-links">
-                    <a href="#" class="social-link" aria-label="GitHub">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                            <path d="M15 22v-4a4.8 4.8 0 0 0-1-3.5c3 0 6-2 6-5.5.08-1.25-.27-2.48-1-3.5.28-1.15.28-2.35 0-3.5 0 0-1 0-3 1.5-2.64-.5-5.36-.5-8 0C6 2 5 2 5 2c-.3 1.15-.3 2.35 0 3.5A5.403 5.403 0 0 0 4 9c0 3.5 3 5.5 6 5.5-.39.49-.68 1.05-.85 1.65-.17.6-.22 1.23-.15 1.85v4"/>
-                            <path d="M9 18c-4.51 2-5-2-7-2"/>
-                        </svg>
-                    </a>
-                    <a href="#" class="social-link" aria-label="LinkedIn">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                            <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/>
-                            <rect width="4" height="12" x="2" y="9"/>
-                            <circle cx="4" cy="4" r="2"/>
-                        </svg>
-                    </a>
-                    <a href="#" class="social-link" aria-label="Email">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                            <rect width="20" height="16" x="2" y="4" rx="2"/>
-                            <path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/>
-                        </svg>
-                    </a>
-                </div>
+                <p class="about-text">
+                    I've worked across different parts of the AI/ML stack from LLMs, multimodal models, recommendation systems, and human–AI interaction.
+                </p>
+
+                <p class="about-text">
+                    Outside of work, I like to build small projects, watch movies, travel and have recently started learning photography. This site is a home for some of my <button class="inline-link inline-nav" data-page="work">work</button>, <button class="inline-link inline-nav" data-page="notes">notes</button>, <button class="inline-link inline-nav" data-page="photos">photos</button>, and things I'm learning along the way.
+                </p>
             </div>
         </div>
     </section>
 
-    <!-- Projects Page -->
-    <section id="projects" class="page">
+    <!-- Work Page -->
+    <section id="work" class="page">
         <div class="page-container">
-            <h2 class="page-title">Projects</h2>
-            <div class="cards-list">
+            <h2 class="work-title">work.</h2>
+            <p class="work-subtitle">A selection of things I've built, researched, and learned from.</p>
+
+            <div class="work-list">
+                <!-- T-Mobile -->
+                <div class="work-card">
+                    <div class="work-card-header">
+                        <h3 class="work-card-title">T-Mobile</h3>
+                        <span class="work-card-link">read notes &rarr;</span>
+                    </div>
+                    <p class="work-card-desc">Worked on evaluation and reliability for production conversational AI — simulating realistic users, building validators, and using production behavior to find regressions and improve reliability.</p>
+                    <p class="work-card-tags">AI AGENTS &middot; EVALUATION &middot; PRODUCTION ML</p>
+                </div>
+
+                <!-- OncoEval -->
+                <div class="work-card">
+                    <div class="work-card-header">
+                        <h3 class="work-card-title">OncoEval</h3>
+                        <span class="work-card-link">view project &rarr;</span>
+                    </div>
+                    <p class="work-card-desc">Built a knowledge-grounded RAG system combining semantic retrieval with symbolic guardrails to reduce hallucinations and improve citation precision and answer completeness.</p>
+                    <p class="work-card-tags">RAG &middot; KNOWLEDGE GRAPHS &middot; BIOMEDICAL NLP</p>
+                </div>
+
+                <!-- Remy -->
+                <div class="work-card">
+                    <div class="work-card-header">
+                        <h3 class="work-card-title">Remy</h3>
+                        <span class="work-card-link">view project &rarr;</span>
+                    </div>
+                    <p class="work-card-desc">A conversational kitchen inventory agent that connects voice interaction, tool calling, structured data, and hardware into something you can actually talk to and use.</p>
+                    <p class="work-card-tags">VOICE AI &middot; AGENTS &middot; TOOL CALLING</p>
+                </div>
+
+                <!-- FocusDAM -->
+                <div class="work-card">
+                    <div class="work-card-header">
+                        <h3 class="work-card-title">FocusDAM</h3>
+                        <span class="work-card-link">read more &rarr;</span>
+                    </div>
+                    <p class="work-card-desc">Explored methods for probing and understanding model behavior, with a focus on multimodal models and deep analysis techniques.</p>
+                    <p class="work-card-tags">MULTIMODAL ML &middot; MODEL BEHAVIOR &middot; RESEARCH</p>
+                </div>
+
+                <!-- Letterboxd Taste Explorer -->
+                <div class="work-card">
+                    <div class="work-card-header">
+                        <h3 class="work-card-title">Letterboxd Taste Explorer</h3>
+                        <span class="work-card-link">view project &rarr;</span>
+                    </div>
+                    <p class="work-card-desc">A small product experiment born from something I already did manually: finding people with overlapping favorite films and exploring what else they love.</p>
+                    <p class="work-card-tags">DISCOVERY &middot; WEB &middot; SIDE PROJECT</p>
+                </div>
+
                 <!-- Scotty Scheduler Project -->
-                <div class="card project-card" onclick="openModal('scotty')">
-                    <div class="card-header">
-                        <h3 class="card-title">Scotty Scheduler</h3>
-                        <a href="https://scottyscheduler.streamlit.app/" target="_blank" class="live-link" onclick="event.stopPropagation()">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                                <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/>
-                                <polyline points="15 3 21 3 21 9"/>
-                                <line x1="10" y1="14" x2="21" y2="3"/>
-                            </svg>
-                            Live
-                        </a>
+                <div class="work-card project-card" onclick="openModal('scotty')">
+                    <div class="work-card-header">
+                        <h3 class="work-card-title">Scotty Scheduler</h3>
+                        <a href="https://scottyscheduler.streamlit.app/" target="_blank" class="work-card-link" onclick="event.stopPropagation()">Live &rarr;</a>
                     </div>
-                    <p class="card-description">AI-powered course recommendation system for CMU students - Winner of Google Deepmind AI Agents Hackathon 2025</p>
-                    <div class="card-tags">
-                        <span>Python,</span>
-                        <span>LlamaIndex,</span>
-                        <span>GPT-4o,</span>
-                        <span>Streamlit</span>
-                    </div>
-                    <p class="click-hint">Click for details</p>
+                    <p class="work-card-desc">AI-powered course recommendation system for CMU students - Winner of Google Deepmind AI Agents Hackathon 2025</p>
+                    <p class="work-card-tags">PYTHON &middot; LLAMAINDEX &middot; GPT-4O &middot; STREAMLIT</p>
                 </div>
 
                 <!-- RecipeBox Project -->
-                <div class="card project-card" onclick="openModal('recipebox')">
-                    <div class="card-header">
-                        <h3 class="card-title">RecipeBox</h3>
-                        <a href="https://recipebox.infinityfree.me/main.html" target="_blank" class="live-link" onclick="event.stopPropagation()">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                                <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/>
-                                <polyline points="15 3 21 3 21 9"/>
-                                <line x1="10" y1="14" x2="21" y2="3"/>
-                            </svg>
-                            Live
-                        </a>
+                <div class="work-card project-card" onclick="openModal('recipebox')">
+                    <div class="work-card-header">
+                        <h3 class="work-card-title">RecipeBox</h3>
+                        <a href="https://recipebox.infinityfree.me/main.html" target="_blank" class="work-card-link" onclick="event.stopPropagation()">Live &rarr;</a>
                     </div>
-                    <p class="card-description">A full-stack web application to store, organize, and manage all your recipes in one place</p>
-                    <div class="card-tags">
-                        <span>PHP,</span>
-                        <span>MySQL,</span>
-                        <span>HTML/CSS,</span>
-                        <span>JavaScript</span>
-                    </div>
-                    <p class="click-hint">Click for details</p>
+                    <p class="work-card-desc">A full-stack web application to store, organize, and manage all your recipes in one place</p>
+                    <p class="work-card-tags">PHP &middot; MYSQL &middot; HTML/CSS &middot; JAVASCRIPT</p>
                 </div>
 
                 <!-- Freshman Portfolio Project -->
-                <div class="card project-card" onclick="openModal('freshman')">
-                    <div class="card-header">
-                        <h3 class="card-title">Freshman Portfolio</h3>
-                        <a href="https://rajakiru.github.io/freshman-portfolio/" target="_blank" class="live-link" onclick="event.stopPropagation()">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                                <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/>
-                                <polyline points="15 3 21 3 21 9"/>
-                                <line x1="10" y1="14" x2="21" y2="3"/>
-                            </svg>
-                            Live
-                        </a>
+                <div class="work-card project-card" onclick="openModal('freshman')">
+                    <div class="work-card-header">
+                        <h3 class="work-card-title">Freshman Portfolio</h3>
+                        <a href="https://rajakiru.github.io/freshman-portfolio/" target="_blank" class="work-card-link" onclick="event.stopPropagation()">Live &rarr;</a>
                     </div>
-                    <p class="card-description">My first personal portfolio website built during freshman year</p>
-                    <div class="card-tags">
-                        <span>HTML,</span>
-                        <span>CSS,</span>
-                        <span>JavaScript</span>
-                    </div>
-                    <p class="click-hint">Click for details</p>
+                    <p class="work-card-desc">My first personal portfolio website built during freshman year</p>
+                    <p class="work-card-tags">HTML &middot; CSS &middot; JAVASCRIPT</p>
+                </div>
+            </div>
+
+            <h3 class="work-section-title">earlier research &amp; experiments.</h3>
+            <div class="research-list">
+                <div class="research-row">
+                    <span class="research-title">Travel recommendation system</span>
+                    <span class="research-tags">NLP &middot; RECOMMENDATION</span>
+                    <span class="research-arrow">&rarr;</span>
+                </div>
+                <div class="research-row">
+                    <span class="research-title">Visual target tracking</span>
+                    <span class="research-tags">COMPUTER VISION &middot; ML</span>
+                    <span class="research-arrow">&rarr;</span>
+                </div>
+                <div class="research-row">
+                    <span class="research-title">EEG + robotics</span>
+                    <span class="research-tags">HCI &middot; MACHINE LEARNING</span>
+                    <span class="research-arrow">&rarr;</span>
+                </div>
+                <div class="research-row">
+                    <span class="research-title">FDA recall dashboard</span>
+                    <span class="research-tags">ML &middot; DATA VISUALIZATION</span>
+                    <span class="research-arrow">&rarr;</span>
                 </div>
             </div>
         </div>
@@ -155,10 +171,18 @@
         </div>
     </div>
 
-    <!-- Blog Page -->
-    <section id="blog" class="page">
-        <div class="page-container blog-page">
-            <h2 class="page-title">Blog</h2>
+    <!-- Photos Page -->
+    <section id="photos" class="page">
+        <div class="page-container">
+            <h2 class="page-title">Photos</h2>
+            <p class="placeholder-text">A collection of photos, coming soon.</p>
+        </div>
+    </section>
+
+    <!-- Notes Page -->
+    <section id="notes" class="page">
+        <div class="page-container notes-page">
+            <h2 class="page-title">Notes</h2>
             <div class="cards-list">
                 <a href="https://medium.com/@rajakiru02/sludge-content-the-rise-and-impact-8619f402cde2" target="_blank" class="card blog-card blog-link">
                     <div class="card-header">
@@ -181,31 +205,51 @@
     <!-- Footer -->
     <footer class="footer">
         <div class="footer-container">
-            <p>&copy; 2024 Kiruthika Raja</p>
+            <div class="footer-social">
+                <a href="https://github.com/rajakiru" target="_blank" class="footer-link">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M15 22v-4a4.8 4.8 0 0 0-1-3.5c3 0 6-2 6-5.5.08-1.25-.27-2.48-1-3.5.28-1.15.28-2.35 0-3.5 0 0-1 0-3 1.5-2.64-.5-5.36-.5-8 0C6 2 5 2 5 2c-.3 1.15-.3 2.35 0 3.5A5.403 5.403 0 0 0 4 9c0 3.5 3 5.5 6 5.5-.39.49-.68 1.05-.85 1.65-.17.6-.22 1.23-.15 1.85v4"/>
+                        <path d="M9 18c-4.51 2-5-2-7-2"/>
+                    </svg>
+                    github
+                </a>
+                <a href="https://www.linkedin.com/in/rajakiru" target="_blank" class="footer-link">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/>
+                        <rect width="4" height="12" x="2" y="9"/>
+                        <circle cx="4" cy="4" r="2"/>
+                    </svg>
+                    linkedin
+                </a>
+                <a href="mailto:rajakiru02@gmail.com" class="footer-link">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <rect width="20" height="16" x="2" y="4" rx="2"/>
+                        <path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/>
+                    </svg>
+                    email
+                </a>
+            </div>
+            <div class="footer-meta">
+                <p class="footer-location">Washington, 2026</p>
+                <p class="footer-tagline">always curious</p>
+            </div>
         </div>
     </footer>
 
     <script>
         // Page navigation
-        const navLinks = document.querySelectorAll('.nav-link');
+        const navLinks = document.querySelectorAll('[data-page]');
         const pages = document.querySelectorAll('.page');
+        const topNavLinks = document.querySelectorAll('.nav-link');
+
+        function goToPage(targetPage) {
+            topNavLinks.forEach(l => l.classList.toggle('active', l.dataset.page === targetPage));
+            pages.forEach(page => page.classList.toggle('active', page.id === targetPage));
+            window.scrollTo(0, 0);
+        }
 
         navLinks.forEach(link => {
-            link.addEventListener('click', () => {
-                const targetPage = link.dataset.page;
-
-                // Update active nav link
-                navLinks.forEach(l => l.classList.remove('active'));
-                link.classList.add('active');
-
-                // Show target page
-                pages.forEach(page => {
-                    page.classList.remove('active');
-                    if (page.id === targetPage) {
-                        page.classList.add('active');
-                    }
-                });
-            });
+            link.addEventListener('click', () => goToPage(link.dataset.page));
         });
 
         // Project details data
@@ -306,3 +350,4 @@
     </script>
 </body>
 </html>
+</content>
