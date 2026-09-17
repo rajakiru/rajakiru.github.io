@@ -157,14 +157,19 @@ body {
 /* Work / Notes Pages */
 .page-title {
     max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
     font-size: 1.75rem;
     font-weight: 700;
     color: #2b2622;
-    margin: 3rem 0 2.5rem;
+    margin-top: 3rem;
+    margin-bottom: 2.5rem;
 }
 
 .placeholder-text {
     max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
     color: #7a6f63;
     font-size: 1rem;
     margin-bottom: 3rem;
@@ -173,14 +178,19 @@ body {
 /* Work Page */
 .work-title {
     max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
     font-size: 1.85rem;
     font-weight: 400;
     color: #2b2622;
-    margin: 3rem 0 0.6rem;
+    margin-top: 3rem;
+    margin-bottom: 0.6rem;
 }
 
 .work-subtitle {
     max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
     font-size: 0.9rem;
     color: #6b6255;
     line-height: 1.5;
@@ -189,6 +199,8 @@ body {
 
 .work-list {
     max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
     display: flex;
     flex-direction: column;
     margin-bottom: 3rem;
@@ -259,6 +271,8 @@ a.work-card-link:hover {
 
 .work-section-title {
     max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
     font-size: 1.15rem;
     font-weight: 400;
     color: #2b2622;
@@ -267,6 +281,8 @@ a.work-card-link:hover {
 
 .research-list {
     max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
     display: flex;
     flex-direction: column;
     margin-bottom: 3rem;
@@ -304,6 +320,8 @@ a.work-card-link:hover {
 /* Cards */
 .cards-list {
     max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
     display: flex;
     flex-direction: column;
     gap: 1.25rem;
