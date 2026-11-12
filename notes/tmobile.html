@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kiru — What I Learned at T-Mobile</title>
+    <link rel="stylesheet" href="../theme.css">
+    <link rel="stylesheet" href="../styles.css">
+    <script src="../theme.js"></script>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <a href="../index.html" class="logo">
+                <span class="logo-swatch"></span>
+                <span class="logo-text">kiru.</span>
+            </a>
+            <div class="nav-links">
+                <a href="../work/index.html" class="nav-link">work</a>
+                <a href="../photos/index.html" class="nav-link">photos</a>
+                <a href="../notes/index.html" class="nav-link active">notes</a>
+                <a href="../about/index.html" class="nav-link">about</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Note Detail Page -->
+    <section class="page active">
+        <div class="page-container">
+            <a href="../notes/index.html" class="detail-back">&larr; back to notes</a>
+            <div class="detail-body">
+                <p class="detail-eyebrow">T-Mobile &middot; AI Engineering Intern</p>
+                <h1 class="detail-title">On Evaluating AI Agents</h1>
+                <p class="detail-subtitle">Notes on user simulation, evaluation, and the challenges of building reliable conversational AI.</p>
+
+                <p class="about-text">During my time as an AI Engineering Intern at T-Mobile, I worked with the IntentCX team on conversational AI initiatives involving T-Mobile's partnership with OpenAI.</p>
+
+                <p class="about-text">A large part of my work revolved around a deceptively simple question: <strong>How do we know if an AI agent is actually doing its job well?</strong></p>
+
+                <p class="about-text">Unlike traditional software, where we can often define expected outputs and test against them, conversational AI introduces a different set of challenges. Users express the same intent in countless ways, conversations rarely follow a predictable path, and a response can sound perfectly reasonable while still failing to accomplish what the user wanted.</p>
+
+                <p class="about-text">My work involved simulating realistic user interactions, designing validation approaches, and building automated regression testing workflows to identify failures and evaluate agent behavior.</p>
+
+                <p class="about-text">This experience made me think more deeply about what it means to evaluate an AI system beyond whether its responses simply look correct.</p>
+
+                <h4 class="detail-heading">Some questions I kept coming back to</h4>
+                <ul class="detail-features">
+                    <li>What does a successful conversation actually look like?</li>
+                    <li>How do we simulate realistic users without making our tests too predictable?</li>
+                    <li>How do we distinguish a plausible response from a genuinely correct one?</li>
+                    <li>How do we design reliable evaluators for systems whose outputs are nondeterministic?</li>
+                    <li>How do we detect regressions when changing one part of an agent can affect seemingly unrelated behaviors?</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-container">
+            <div class="footer-social">
+                <a href="https://github.com/rajakiru" target="_blank" class="footer-link">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M15 22v-4a4.8 4.8 0 0 0-1-3.5c3 0 6-2 6-5.5.08-1.25-.27-2.48-1-3.5.28-1.15.28-2.35 0-3.5 0 0-1 0-3 1.5-2.64-.5-5.36-.5-8 0C6 2 5 2 5 2c-.3 1.15-.3 2.35 0 3.5A5.403 5.403 0 0 0 4 9c0 3.5 3 5.5 6 5.5-.39.49-.68 1.05-.85 1.65-.17.6-.22 1.23-.15 1.85v4"/>
+                        <path d="M9 18c-4.51 2-5-2-7-2"/>
+                    </svg>
+                    github
+                </a>
+                <a href="https://www.linkedin.com/in/rajakiru" target="_blank" class="footer-link">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/>
+                        <rect width="4" height="12" x="2" y="9"/>
+                        <circle cx="4" cy="4" r="2"/>
+                    </svg>
+                    linkedin
+                </a>
+                <a href="mailto:rajakiru02@gmail.com" class="footer-link">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <rect width="20" height="16" x="2" y="4" rx="2"/>
+                        <path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/>
+                    </svg>
+                    email
+                </a>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>
