@@ -1,0 +1,166 @@
+/* Theme variables + presets. Loaded before styles.css so colors below are
+   available wherever styles.css references var(--c-*). */
+:root {
+    --c-bg: #fbfaf7;
+    --c-text: #2b2622;
+    --c-text-rgb: 43, 38, 34;
+    --c-text-strong: #171717;
+    --c-muted: #8a8078;
+    --c-dim: #6b6255;
+    --c-soft: #7a6f63;
+    --c-table: #4b4438;
+    --c-footer-text: #524a41;
+    --c-border: #e5e0d5;
+    --c-border-footer: #e3d9cd;
+    --c-chip-bg: #f2ede4;
+    --c-link: #6b7fb0;
+
+    /* accent is independent of the background mood below and can be
+       overridden by the visitor (see theme.js) */
+    --c-accent-a: #e7c9c2;
+    --c-accent-b: #d8c7e0;
+}
+
+:root[data-theme="sage"] {
+    --c-bg: #f6f7f1;
+    --c-text: #262e26;
+    --c-text-rgb: 38, 46, 38;
+    --c-text-strong: #181f18;
+    --c-muted: #848f7e;
+    --c-dim: #5f6a58;
+    --c-soft: #6f7a68;
+    --c-table: #424c3d;
+    --c-footer-text: #4c5646;
+    --c-border: #e1e6d7;
+    --c-border-footer: #dde3d1;
+    --c-chip-bg: #ecf0e2;
+    --c-link: #6b8a7f;
+}
+
+:root[data-theme="blush"] {
+    --c-bg: #fbf1ef;
+    --c-text: #2e2320;
+    --c-text-rgb: 46, 35, 32;
+    --c-text-strong: #1c1312;
+    --c-muted: #957f7a;
+    --c-dim: #6f5650;
+    --c-soft: #816760;
+    --c-table: #513d38;
+    --c-footer-text: #5a4440;
+    --c-border: #ecd9d4;
+    --c-border-footer: #e8d2cc;
+    --c-chip-bg: #f6e4df;
+    --c-link: #b07a8c;
+}
+
+:root[data-theme="dark"] {
+    --c-bg: #1b1917;
+    --c-text: #ece6dd;
+    --c-text-rgb: 236, 230, 221;
+    --c-text-strong: #fbfaf7;
+    --c-muted: #978d82;
+    --c-dim: #c7bfb4;
+    --c-soft: #b2a89d;
+    --c-table: #d6cdc1;
+    --c-footer-text: #a89d92;
+    --c-border: #332f2a;
+    --c-border-footer: #3a352f;
+    --c-chip-bg: #252220;
+    --c-link: #9db0d6;
+}
+
+/* Theme popover trigger (wraps the existing .logo-swatch) */
+.theme-trigger {
+    position: relative;
+    cursor: pointer;
+}
+
+.theme-popover {
+    position: absolute;
+    top: calc(100% + 10px);
+    left: 0;
+    z-index: 50;
+    width: 208px;
+    padding: 14px;
+    border-radius: 12px;
+    background-color: var(--c-bg);
+    border: 1px solid var(--c-border);
+    box-shadow: 0 8px 24px rgba(var(--c-text-rgb), 0.12);
+    font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+    opacity: 0;
+    transform: translateY(-4px);
+    visibility: hidden;
+    transition: opacity 0.15s ease, transform 0.15s ease;
+}
+
+.theme-popover.open {
+    opacity: 1;
+    transform: translateY(0);
+    visibility: visible;
+}
+
+.theme-popover-handle {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 3px;
+    height: 14px;
+    margin: -4px -4px 8px;
+    border-radius: 6px;
+    cursor: grab;
+    touch-action: none;
+}
+
+.theme-popover-handle:active {
+    cursor: grabbing;
+}
+
+.theme-popover-handle span {
+    width: 3px;
+    height: 3px;
+    border-radius: 50%;
+    background: var(--c-muted);
+}
+
+.theme-popover-label {
+    font-size: 11px;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+    color: var(--c-muted);
+    margin-bottom: 8px;
+    display: block;
+}
+
+.theme-popover-label:not(:first-child) {
+    margin-top: 14px;
+}
+
+.theme-swatch-row {
+    display: flex;
+    gap: 8px;
+    flex-wrap: wrap;
+}
+
+.theme-swatch {
+    width: 22px;
+    height: 22px;
+    border-radius: 50%;
+    border: 1px solid rgba(var(--c-text-rgb), 0.1);
+    cursor: pointer;
+    padding: 0;
+    position: relative;
+}
+
+.theme-swatch.is-active::after {
+    content: "";
+    position: absolute;
+    inset: -3px;
+    border: 1px solid var(--c-text);
+    border-radius: 50%;
+}
+
+.theme-swatch-accent {
+    width: 20px;
+    height: 20px;
+}
+
