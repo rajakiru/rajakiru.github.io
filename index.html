@@ -4,27 +4,29 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Kiru</title>
+    <link rel="stylesheet" href="theme.css">
     <link rel="stylesheet" href="styles.css">
+    <script src="theme.js"></script>
 </head>
 <body>
     <!-- Navigation -->
     <nav class="navbar">
         <div class="nav-container">
-            <div class="logo">
+            <a href="index.html" class="logo">
                 <span class="logo-swatch"></span>
                 <span class="logo-text">kiru.</span>
-            </div>
+            </a>
             <div class="nav-links">
-                <button class="nav-link active" data-page="work">work</button>
-                <button class="nav-link" data-page="photos">photos</button>
-                <button class="nav-link" data-page="notes">notes</button>
-                <button class="nav-link" data-page="about">about</button>
+                <a href="work/index.html" class="nav-link">work</a>
+                <a href="photos/index.html" class="nav-link">photos</a>
+                <a href="notes/index.html" class="nav-link">notes</a>
+                <a href="about/index.html" class="nav-link">about</a>
             </div>
         </div>
     </nav>
 
     <!-- About / Home Page -->
-    <section id="about" class="page active">
+    <section class="page active">
         <div class="page-container about-page">
             <figure class="hero-figure">
                 <img src="images/rainier.JPG" alt="Sunrise over the clouds from a mountain ridge" class="hero-image">
@@ -32,7 +34,7 @@
             </figure>
 
             <div class="about-content">
-                <h1 class="about-heading">Hi, I'm Kiruthika Raja but you can call me Kiru.</h1>
+                <p class="about-text">Hi, I'm Kiruthika Raja, but you can call me Kiru.</p>
 
                 <p class="about-text">
                     I'm an AI/ML engineer and master's student at <a href="https://www.cmu.edu/" target="_blank" class="inline-link">Carnegie Mellon</a>, where I explore how AI can be useful, reliable, and enjoyable to use. Most recently, I was an AI intern at <a href="https://www.t-mobile.com/" target="_blank" class="inline-link">T-Mobile</a>, working on evaluation and reliability for production conversational AI.
@@ -43,161 +45,8 @@
                 </p>
 
                 <p class="about-text">
-                    Outside of work, I like to build small projects, watch movies, travel and have recently started learning photography. This site is a home for some of my <button class="inline-link inline-nav" data-page="work">work</button>, <button class="inline-link inline-nav" data-page="notes">notes</button>, <button class="inline-link inline-nav" data-page="photos">photos</button>, and things I'm learning along the way.
+                    Outside of work, I like to build small projects, watch movies, travel and have recently started learning photography. This site is a home for some of my <a href="work/index.html" class="inline-link">work</a>, <a href="notes/index.html" class="inline-link">notes</a>, <a href="photos/index.html" class="inline-link">photos</a>, and things I'm learning along the way.
                 </p>
-            </div>
-        </div>
-    </section>
-
-    <!-- Work Page -->
-    <section id="work" class="page">
-        <div class="page-container">
-            <h2 class="work-title">work.</h2>
-            <p class="work-subtitle">A selection of things I've built, researched, and learned from.</p>
-
-            <div class="work-list">
-                <!-- T-Mobile -->
-                <div class="work-card">
-                    <div class="work-card-header">
-                        <h3 class="work-card-title">T-Mobile</h3>
-                        <span class="work-card-link">read notes &rarr;</span>
-                    </div>
-                    <p class="work-card-desc">Worked on evaluation and reliability for production conversational AI — simulating realistic users, building validators, and using production behavior to find regressions and improve reliability.</p>
-                    <p class="work-card-tags">AI AGENTS &middot; EVALUATION &middot; PRODUCTION ML</p>
-                </div>
-
-                <!-- OncoEval -->
-                <div class="work-card">
-                    <div class="work-card-header">
-                        <h3 class="work-card-title">OncoEval</h3>
-                        <span class="work-card-link">view project &rarr;</span>
-                    </div>
-                    <p class="work-card-desc">Built a knowledge-grounded RAG system combining semantic retrieval with symbolic guardrails to reduce hallucinations and improve citation precision and answer completeness.</p>
-                    <p class="work-card-tags">RAG &middot; KNOWLEDGE GRAPHS &middot; BIOMEDICAL NLP</p>
-                </div>
-
-                <!-- Remy -->
-                <div class="work-card">
-                    <div class="work-card-header">
-                        <h3 class="work-card-title">Remy</h3>
-                        <span class="work-card-link">view project &rarr;</span>
-                    </div>
-                    <p class="work-card-desc">A conversational kitchen inventory agent that connects voice interaction, tool calling, structured data, and hardware into something you can actually talk to and use.</p>
-                    <p class="work-card-tags">VOICE AI &middot; AGENTS &middot; TOOL CALLING</p>
-                </div>
-
-                <!-- FocusDAM -->
-                <div class="work-card">
-                    <div class="work-card-header">
-                        <h3 class="work-card-title">FocusDAM</h3>
-                        <span class="work-card-link">read more &rarr;</span>
-                    </div>
-                    <p class="work-card-desc">Explored methods for probing and understanding model behavior, with a focus on multimodal models and deep analysis techniques.</p>
-                    <p class="work-card-tags">MULTIMODAL ML &middot; MODEL BEHAVIOR &middot; RESEARCH</p>
-                </div>
-
-                <!-- Letterboxd Taste Explorer -->
-                <div class="work-card">
-                    <div class="work-card-header">
-                        <h3 class="work-card-title">Letterboxd Taste Explorer</h3>
-                        <span class="work-card-link">view project &rarr;</span>
-                    </div>
-                    <p class="work-card-desc">A small product experiment born from something I already did manually: finding people with overlapping favorite films and exploring what else they love.</p>
-                    <p class="work-card-tags">DISCOVERY &middot; WEB &middot; SIDE PROJECT</p>
-                </div>
-
-                <!-- Scotty Scheduler Project -->
-                <div class="work-card project-card" onclick="openModal('scotty')">
-                    <div class="work-card-header">
-                        <h3 class="work-card-title">Scotty Scheduler</h3>
-                        <a href="https://scottyscheduler.streamlit.app/" target="_blank" class="work-card-link" onclick="event.stopPropagation()">Live &rarr;</a>
-                    </div>
-                    <p class="work-card-desc">AI-powered course recommendation system for CMU students - Winner of Google Deepmind AI Agents Hackathon 2025</p>
-                    <p class="work-card-tags">PYTHON &middot; LLAMAINDEX &middot; GPT-4O &middot; STREAMLIT</p>
-                </div>
-
-                <!-- RecipeBox Project -->
-                <div class="work-card project-card" onclick="openModal('recipebox')">
-                    <div class="work-card-header">
-                        <h3 class="work-card-title">RecipeBox</h3>
-                        <a href="https://recipebox.infinityfree.me/main.html" target="_blank" class="work-card-link" onclick="event.stopPropagation()">Live &rarr;</a>
-                    </div>
-                    <p class="work-card-desc">A full-stack web application to store, organize, and manage all your recipes in one place</p>
-                    <p class="work-card-tags">PHP &middot; MYSQL &middot; HTML/CSS &middot; JAVASCRIPT</p>
-                </div>
-
-                <!-- Freshman Portfolio Project -->
-                <div class="work-card project-card" onclick="openModal('freshman')">
-                    <div class="work-card-header">
-                        <h3 class="work-card-title">Freshman Portfolio</h3>
-                        <a href="https://rajakiru.github.io/freshman-portfolio/" target="_blank" class="work-card-link" onclick="event.stopPropagation()">Live &rarr;</a>
-                    </div>
-                    <p class="work-card-desc">My first personal portfolio website built during freshman year</p>
-                    <p class="work-card-tags">HTML &middot; CSS &middot; JAVASCRIPT</p>
-                </div>
-            </div>
-
-            <h3 class="work-section-title">earlier research &amp; experiments.</h3>
-            <div class="research-list">
-                <div class="research-row">
-                    <span class="research-title">Travel recommendation system</span>
-                    <span class="research-tags">NLP &middot; RECOMMENDATION</span>
-                    <span class="research-arrow">&rarr;</span>
-                </div>
-                <div class="research-row">
-                    <span class="research-title">Visual target tracking</span>
-                    <span class="research-tags">COMPUTER VISION &middot; ML</span>
-                    <span class="research-arrow">&rarr;</span>
-                </div>
-                <div class="research-row">
-                    <span class="research-title">EEG + robotics</span>
-                    <span class="research-tags">HCI &middot; MACHINE LEARNING</span>
-                    <span class="research-arrow">&rarr;</span>
-                </div>
-                <div class="research-row">
-                    <span class="research-title">FDA recall dashboard</span>
-                    <span class="research-tags">ML &middot; DATA VISUALIZATION</span>
-                    <span class="research-arrow">&rarr;</span>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Project Modal -->
-    <div id="project-modal" class="modal">
-        <div class="modal-content">
-            <button class="modal-close" onclick="closeModal()">&times;</button>
-            <div id="modal-body"></div>
-        </div>
-    </div>
-
-    <!-- Photos Page -->
-    <section id="photos" class="page">
-        <div class="page-container">
-            <h2 class="page-title">Photos</h2>
-            <p class="placeholder-text">A collection of photos, coming soon.</p>
-        </div>
-    </section>
-
-    <!-- Notes Page -->
-    <section id="notes" class="page">
-        <div class="page-container notes-page">
-            <h2 class="page-title">Notes</h2>
-            <div class="cards-list">
-                <a href="https://medium.com/@rajakiru02/sludge-content-the-rise-and-impact-8619f402cde2" target="_blank" class="card blog-card blog-link">
-                    <div class="card-header">
-                        <h3 class="card-title">Sludge Content: The Rise and Impact</h3>
-                        <span class="read-link">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                                <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/>
-                                <polyline points="15 3 21 3 21 9"/>
-                                <line x1="10" y1="14" x2="21" y2="3"/>
-                            </svg>
-                            Read on Medium
-                        </span>
-                    </div>
-                    <p class="card-description">Exploring the phenomenon of sludge content and its effects on digital media consumption</p>
-                </a>
             </div>
         </div>
     </section>
@@ -229,125 +78,7 @@
                     email
                 </a>
             </div>
-            <div class="footer-meta">
-                <p class="footer-location">Washington, 2026</p>
-                <p class="footer-tagline">always curious</p>
-            </div>
         </div>
     </footer>
-
-    <script>
-        // Page navigation
-        const navLinks = document.querySelectorAll('[data-page]');
-        const pages = document.querySelectorAll('.page');
-        const topNavLinks = document.querySelectorAll('.nav-link');
-
-        function goToPage(targetPage) {
-            topNavLinks.forEach(l => l.classList.toggle('active', l.dataset.page === targetPage));
-            pages.forEach(page => page.classList.toggle('active', page.id === targetPage));
-            window.scrollTo(0, 0);
-        }
-
-        navLinks.forEach(link => {
-            link.addEventListener('click', () => goToPage(link.dataset.page));
-        });
-
-        // Project details data
-        const projectDetails = {
-            scotty: {
-                title: 'Scotty Scheduler',
-                description: 'An intelligent course recommendation system that helps CMU students find the perfect courses based on their interests, past experience, and preferences. Winner of the Google Deepmind AI Agents Hackathon 2025 at CMU.',
-                features: [
-                    'AI-powered personalized course recommendations using GPT-4o',
-                    'Resume analysis to automatically detect interests and skills',
-                    'Flexible filtering by weekly hours and course ratings',
-                    'Calendar integration with .ics export for recommended courses',
-                    'RAG-based search over CMU ECE course syllabi'
-                ],
-                tech: ['Python', 'LlamaIndex', 'GPT-4o', 'Streamlit', 'Flask', 'HuggingFace'],
-                link: 'https://scottyscheduler.streamlit.app/'
-            },
-            recipebox: {
-                title: 'RecipeBox',
-                description: 'A full-stack web application that allows users to store and organize all their recipes in one place.',
-                features: [
-                    'View all recipes with search and filter functionality',
-                    'Add new recipes with ingredients, instructions, and images',
-                    'Edit and update existing recipes',
-                    'Organize recipes by categories and cuisines',
-                    'Responsive design for mobile and desktop'
-                ],
-                tech: ['PHP', 'MySQL', 'HTML5', 'CSS3', 'JavaScript'],
-                link: 'https://recipebox.infinityfree.me/main.html'
-            },
-            freshman: {
-                title: 'Freshman Portfolio',
-                description: 'My first personal portfolio website, built during freshman year to showcase my journey into web development and programming.',
-                features: [
-                    'Clean and simple design',
-                    'About me section with background info',
-                    'Projects showcase',
-                    'Contact information',
-                    'Fully responsive layout'
-                ],
-                tech: ['HTML5', 'CSS3', 'JavaScript'],
-                link: 'https://rajakiru.github.io/freshman-portfolio/'
-            }
-        };
-
-        // Modal functions
-        function openModal(projectId) {
-            const project = projectDetails[projectId];
-            const modal = document.getElementById('project-modal');
-            const modalBody = document.getElementById('modal-body');
-
-            let featuresHtml = project.features.map(f => `<li>${f}</li>`).join('');
-            let techHtml = project.tech.map(t => `<span class="modal-tag">${t}</span>`).join('');
-            let linkHtml = project.link
-                ? `<a href="${project.link}" target="_blank" class="modal-link">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                        <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/>
-                        <polyline points="15 3 21 3 21 9"/>
-                        <line x1="10" y1="14" x2="21" y2="3"/>
-                    </svg>
-                    View Live Site
-                   </a>`
-                : '';
-
-            modalBody.innerHTML = `
-                <h2 class="modal-title">${project.title}</h2>
-                <p class="modal-description">${project.description}</p>
-                <h4 class="modal-section-title">Key Features</h4>
-                <ul class="modal-features">${featuresHtml}</ul>
-                <h4 class="modal-section-title">Technologies</h4>
-                <div class="modal-tags">${techHtml}</div>
-                ${linkHtml}
-            `;
-
-            modal.classList.add('active');
-            document.body.style.overflow = 'hidden';
-        }
-
-        function closeModal() {
-            const modal = document.getElementById('project-modal');
-            modal.classList.remove('active');
-            document.body.style.overflow = 'auto';
-        }
-
-        // Close modal when clicking outside
-        document.getElementById('project-modal').addEventListener('click', (e) => {
-            if (e.target.id === 'project-modal') {
-                closeModal();
-            }
-        });
-
-        // Close modal with Escape key
-        document.addEventListener('keydown', (e) => {
-            if (e.key === 'Escape') {
-                closeModal();
-            }
-        });
-    </script>
 </body>
 </html>
-</content>

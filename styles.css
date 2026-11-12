@@ -6,22 +6,23 @@
 }
 
 body {
-    font-family: Georgia, 'Iowan Old Style', 'Palatino Linotype', 'Book Antiqua', Palatino, serif;
-    background-color: #fbfaf7;
-    color: #2b2622;
+    font-family: Inter, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif;
+    background-color: var(--c-bg);
+    color: var(--c-text);
     font-size: 18px;
     line-height: 1.58;
     min-height: 100vh;
+    transition: background-color 0.25s ease, color 0.25s ease;
 }
 
 /* Navigation */
 .navbar {
-    background-color: #fbfaf7;
+    background-color: var(--c-bg);
     padding: 3rem 0 2rem;
 }
 
 .nav-container {
-    max-width: 820px;
+    max-width: 650px;
     margin: 0 auto;
     padding: 0 2rem;
     display: flex;
@@ -33,11 +34,16 @@ body {
     display: flex;
     align-items: center;
     gap: 0.6rem;
+    background: none;
+    border: none;
+    padding: 0;
+    cursor: pointer;
+    text-decoration: none;
     font-family: Georgia, "Times New Roman", serif;
     font-size: 28px;
     font-weight: 400;
     letter-spacing: -0.04em;
-    color: #2b2622;
+    color: var(--c-text);
 }
 
 .logo-swatch {
@@ -45,7 +51,7 @@ body {
     width: 1.1rem;
     height: 1.1rem;
     border-radius: 0.3rem;
-    background: linear-gradient(135deg, #e7c9c2 0%, #d8c7e0 100%);
+    background: linear-gradient(135deg, var(--c-accent-a) 0%, var(--c-accent-b) 100%);
 }
 
 .nav-links {
@@ -56,21 +62,23 @@ body {
 .nav-link {
     background: none;
     border: none;
+    text-decoration: none;
     font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
     font-size: 14px;
     font-weight: 400;
-    color: #2b2622;
+    color: var(--c-text);
     cursor: pointer;
     padding: 0;
     transition: color 0.2s ease;
 }
 
 .nav-link:hover {
-    color: #7a6f63;
+    color: var(--c-soft);
 }
 
 .nav-link.active {
     text-decoration: underline;
+    text-decoration-color: var(--c-accent-a);
     text-underline-offset: 3px;
 }
 
@@ -96,6 +104,7 @@ body {
 }
 
 .hero-figure {
+    position: relative;
     max-width: 600px;
     margin: 0 auto 0.75rem;
 }
@@ -110,34 +119,45 @@ body {
 }
 
 .hero-caption {
-    text-align: right;
-    font-size: 0.8rem;
-    color: #8a8078;
-    margin-top: 0.75rem;
+    position: absolute;
+    right: 0.75rem;
+    bottom: 0.75rem;
+    padding: 0.25rem 0.6rem;
+    background-color: rgba(var(--c-text-rgb), 0.55);
+    border-radius: 0.25rem;
+    font-size: 0.75rem;
+    color: var(--c-bg);
+    opacity: 0;
+    transition: opacity 0.2s ease;
+    pointer-events: none;
+}
+
+.hero-figure:hover .hero-caption {
+    opacity: 1;
 }
 
 .about-content {
-    max-width: 600px;
+    max-width: 590px;
     margin: 2rem auto 0;
 }
 
 .about-heading {
     font-size: 1.15rem;
     font-weight: 700;
-    color: #2b2622;
+    color: var(--c-text);
     margin-bottom: 1.5rem;
     line-height: 1.4;
 }
 
 .about-text {
-    font-size: 1rem;
+    font-size: 14px;
     line-height: 1.58;
-    color: #2b2622;
+    color: var(--c-text);
     margin-bottom: 1.5rem;
 }
 
 .inline-link {
-    color: #6b7fb0;
+    color: var(--c-link);
     text-decoration: none;
 }
 
@@ -145,56 +165,334 @@ body {
     text-decoration: underline;
 }
 
-.inline-nav {
-    background: none;
-    border: none;
-    padding: 0;
-    font: inherit;
+/* Resume: Education & Work Experience */
+
+.resume-section {
+    max-width: 590px;
+    margin: 2.5rem auto 0;
+}
+
+.resume-group + .resume-group {
+    border-top: 1px solid var(--c-border);
+    margin-top: 1.5rem;
+    padding-top: 1.5rem;
+}
+
+.resume-group-title {
+    list-style: none;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 0 1.5rem;
+    font-size: 1.15rem;
+    font-weight: 400;
+    color: var(--c-text);
     cursor: pointer;
 }
 
+.resume-group-title::-webkit-details-marker {
+    display: none;
+}
+
+.resume-chevron {
+    flex-shrink: 0;
+    color: var(--c-text-strong);
+    transition: transform 0.2s ease;
+}
+
+.resume-group:not([open]) .resume-chevron {
+    transform: rotate(-90deg);
+}
+
+.resume-items {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    padding-bottom: 0.5rem;
+}
+
+.resume-item-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    gap: 1rem;
+    margin-bottom: 0.3rem;
+}
+
+.resume-item-title,
+.resume-item-title-link {
+    font-size: 1.05rem;
+    font-weight: 400;
+    color: var(--c-text-strong);
+    text-decoration: none;
+}
+
+.resume-item-title-link:hover {
+    text-decoration: underline;
+}
+
+.resume-item-date {
+    font-size: 13px;
+    color: var(--c-muted);
+    white-space: nowrap;
+}
+
+.resume-item-subtitle {
+    font-size: 14px;
+    line-height: 1.5;
+    color: var(--c-muted);
+}
+
+.resume-item-desc {
+    font-size: 14px;
+    line-height: 1.58;
+    color: var(--c-text);
+    margin-top: 0.3rem;
+}
+
+.resume-item-link {
+    display: inline-block;
+    font-size: 13px;
+    color: var(--c-text-strong);
+    text-decoration: underline;
+    text-underline-offset: 3px;
+    margin-top: 0.4rem;
+}
+
+.resume-item-link:hover {
+    opacity: 0.6;
+}
+
+/* Project Detail Page */
+.detail-back {
+    display: block;
+    max-width: 600px;
+    margin: 2rem auto 2rem;
+    background: none;
+    border: none;
+    padding: 0;
+    font-family: inherit;
+    font-size: 0.85rem;
+    color: var(--c-dim);
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.detail-back:hover {
+    color: var(--c-text);
+}
+
+.detail-body {
+    max-width: 600px;
+    margin: 0 auto 4rem;
+}
+
+.detail-eyebrow {
+    font-size: 0.8rem;
+    letter-spacing: 0.03em;
+    text-transform: uppercase;
+    color: var(--c-muted);
+    margin-bottom: 0.6rem;
+}
+
+.detail-title {
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: 1.6rem;
+    font-weight: 400;
+    letter-spacing: -0.02em;
+    color: var(--c-text);
+    margin-bottom: 1.25rem;
+}
+
+.detail-subtitle {
+    font-style: italic;
+    font-size: 0.95rem;
+    color: var(--c-dim);
+    line-height: 1.58;
+    margin-bottom: 1.75rem;
+}
+
+.detail-tagline {
+    font-size: 0.85rem;
+    font-weight: 700;
+    color: var(--c-dim);
+    margin-bottom: 1.5rem;
+}
+
+.detail-heading {
+    font-size: 1.3rem;
+    font-weight: 700;
+    color: var(--c-text);
+    margin: 2.5rem 0 1rem;
+}
+
+.detail-subheading {
+    font-size: 1.05rem;
+    font-weight: 700;
+    color: var(--c-text);
+    margin: 1.75rem 0 0.75rem;
+}
+
+.detail-divider {
+    max-width: 100%;
+    border: none;
+    border-top: 1px solid var(--c-border);
+    margin: 2.5rem 0;
+}
+
+.detail-table-wrap {
+    overflow-x: auto;
+    margin: 1.5rem 0;
+}
+
+.detail-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 13px;
+}
+
+.detail-table th,
+.detail-table td {
+    text-align: left;
+    padding: 0.6rem 0.75rem;
+    border-bottom: 1px solid var(--c-border);
+}
+
+.detail-table th {
+    font-weight: 700;
+    color: var(--c-text);
+}
+
+.detail-table td {
+    color: var(--c-table);
+}
+
+.detail-table td:last-child,
+.detail-table th:last-child {
+    text-align: right;
+}
+
+.detail-caption {
+    font-size: 0.85rem;
+    font-style: italic;
+    color: var(--c-muted);
+    border-left: 2px solid var(--c-border);
+    padding-left: 0.85rem;
+    margin: 1.5rem 0;
+}
+
+.detail-figure {
+    margin: 2rem 0;
+}
+
+.detail-figure img {
+    display: block;
+    width: 100%;
+    height: auto;
+    border-radius: 0.375rem;
+}
+
+.detail-figure figcaption {
+    font-size: 0.8rem;
+    color: var(--c-muted);
+    margin-top: 0.6rem;
+}
+
+.detail-section-title {
+    font-size: 0.95rem;
+    font-weight: 700;
+    color: var(--c-text);
+    margin: 1.75rem 0 0.75rem;
+}
+
+.detail-features {
+    padding-left: 1.25rem;
+}
+
+.detail-features li {
+    font-size: 14px;
+    line-height: 1.58;
+    color: var(--c-text);
+    margin-bottom: 0.5rem;
+}
+
+.detail-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+}
+
+.detail-tag {
+    font-family: 'SF Mono', 'Fira Code', 'Consolas', monospace;
+    font-size: 0.75rem;
+    letter-spacing: 0.03em;
+    color: var(--c-muted);
+    background-color: var(--c-chip-bg);
+    border-radius: 0.25rem;
+    padding: 0.3rem 0.6rem;
+}
 
 /* Work / Notes Pages */
 .page-title {
     max-width: 600px;
     margin-left: auto;
     margin-right: auto;
-    font-size: 1.75rem;
-    font-weight: 700;
-    color: #2b2622;
-    margin-top: 3rem;
-    margin-bottom: 2.5rem;
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: 1.4rem;
+    font-weight: 400;
+    letter-spacing: -0.02em;
+    color: var(--c-text);
+    margin-top: 1rem;
+    margin-bottom: 0.6rem;
 }
 
 .placeholder-text {
     max-width: 600px;
     margin-left: auto;
     margin-right: auto;
-    color: #7a6f63;
+    color: var(--c-soft);
     font-size: 1rem;
     margin-bottom: 3rem;
 }
 
 /* Work Page */
-.work-title {
-    max-width: 600px;
-    margin-left: auto;
-    margin-right: auto;
-    font-size: 1.85rem;
-    font-weight: 400;
-    color: #2b2622;
-    margin-top: 3rem;
-    margin-bottom: 0.6rem;
-}
-
 .work-subtitle {
     max-width: 600px;
     margin-left: auto;
     margin-right: auto;
     font-size: 0.9rem;
-    color: #6b6255;
+    color: var(--c-dim);
     line-height: 1.5;
     margin-bottom: 2.5rem;
+}
+
+.work-filters {
+    max-width: 600px;
+    margin: 0 auto 2rem;
+    display: flex;
+    gap: 0.85rem;
+}
+
+.filter-btn {
+    background: none;
+    border: none;
+    padding: 0;
+    font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+    font-size: 0.8rem;
+    color: var(--c-muted);
+    cursor: pointer;
+    transition: color 0.2s ease;
+}
+
+.filter-btn:hover {
+    color: var(--c-text);
+}
+
+.filter-btn.active {
+    color: var(--c-text-strong);
+    text-decoration: underline;
+    text-decoration-color: var(--c-accent-a);
+    text-underline-offset: 3px;
 }
 
 .work-list {
@@ -208,7 +506,7 @@ body {
 
 .work-card {
     padding: 1.75rem 0;
-    border-bottom: 1px solid #e5e0d5;
+    border-bottom: 1px solid var(--c-border);
     transition: opacity 0.2s ease;
 }
 
@@ -220,11 +518,22 @@ body {
     border-bottom: none;
 }
 
-.work-card.project-card {
+.work-list .work-card.is-first-visible {
+    padding-top: 0;
+}
+
+.work-list .work-card.is-last-visible {
+    border-bottom: none;
+}
+
+.work-card.project-card,
+.work-card.note-card {
+    position: relative;
     cursor: pointer;
 }
 
-.work-card.project-card:hover {
+.work-card.project-card:hover,
+.work-card.note-card:hover {
     opacity: 0.65;
 }
 
@@ -239,13 +548,26 @@ body {
 .work-card-title {
     font-size: 1.05rem;
     font-weight: 400;
-    color: #171717;
+    color: var(--c-text-strong);
+}
+
+.work-card-title-link {
+    color: inherit;
+    text-decoration: none;
+}
+
+.work-card-title-link::after {
+    content: "";
+    position: absolute;
+    inset: 0;
 }
 
 .work-card-link {
+    position: relative;
+    z-index: 2;
     font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
     font-size: 0.75rem;
-    color: #171717;
+    color: var(--c-text-strong);
     text-decoration: underline;
     text-underline-offset: 3px;
     white-space: nowrap;
@@ -257,7 +579,7 @@ a.work-card-link:hover {
 
 .work-card-desc {
     font-size: 0.9rem;
-    color: #4b4438;
+    color: var(--c-table);
     line-height: 1.58;
     margin-bottom: 0.75rem;
 }
@@ -266,7 +588,7 @@ a.work-card-link:hover {
     font-family: 'SF Mono', 'Fira Code', 'Consolas', monospace;
     font-size: 0.68rem;
     letter-spacing: 0.03em;
-    color: #8a8078;
+    color: var(--c-muted);
 }
 
 .work-section-title {
@@ -275,7 +597,7 @@ a.work-card-link:hover {
     margin-right: auto;
     font-size: 1.15rem;
     font-weight: 400;
-    color: #2b2622;
+    color: var(--c-text);
     margin-bottom: 1.25rem;
 }
 
@@ -290,7 +612,7 @@ a.work-card-link:hover {
 
 .research-row {
     padding: 0.9rem 0;
-    border-bottom: 1px solid #e5e0d5;
+    border-bottom: 1px solid var(--c-border);
     display: flex;
     align-items: center;
     gap: 1rem;
@@ -302,272 +624,27 @@ a.work-card-link:hover {
 
 .research-title {
     font-size: 0.9rem;
-    color: #171717;
+    color: var(--c-text-strong);
     flex: 1;
 }
 
 .research-tags {
+    flex-shrink: 0;
+    white-space: nowrap;
     font-family: 'SF Mono', 'Fira Code', 'Consolas', monospace;
     font-size: 0.68rem;
     letter-spacing: 0.03em;
-    color: #8a8078;
+    color: var(--c-muted);
 }
 
 .research-arrow {
-    color: #171717;
+    color: var(--c-text-strong);
 }
 
-/* Cards */
-.cards-list {
-    max-width: 600px;
-    margin-left: auto;
-    margin-right: auto;
-    display: flex;
-    flex-direction: column;
-    gap: 1.25rem;
-    margin-bottom: 4rem;
-}
-
-.card {
-    border: 1px solid #e3d9cd;
-    border-radius: 0.375rem;
-    padding: 1.25rem;
-    background-color: #ffffff;
-    transition: box-shadow 0.2s ease, transform 0.2s ease;
-}
-
-.project-card {
-    cursor: pointer;
-}
-
-.project-card:hover {
-    transform: translateY(-2px);
-    box-shadow: 0 4px 12px rgba(43, 38, 34, 0.08);
-}
-
-.card-header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    margin-bottom: 0.5rem;
-}
-
-.live-link {
-    display: inline-flex;
-    align-items: center;
-    gap: 0.375rem;
-    padding: 0.375rem 0.75rem;
-    background-color: #2b2622;
-    color: #faf6f1;
-    text-decoration: none;
-    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
-    font-size: 0.75rem;
-    font-weight: 600;
-    border-radius: 0.25rem;
-    transition: background-color 0.2s ease;
-}
-
-.live-link:hover {
-    background-color: #55493d;
-}
-
-.live-link svg {
-    width: 14px;
-    height: 14px;
-}
-
-.click-hint {
-    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
-    font-size: 0.75rem;
-    color: #a89d8e;
-    margin-top: 0.75rem;
-    margin-bottom: 0;
-    font-style: italic;
-}
-
-.blog-card {
-    background-color: #ffffff;
-}
-
-.blog-link {
-    text-decoration: none;
-    display: block;
-    cursor: pointer;
-    color: inherit;
-}
-
-.blog-link:hover {
-    transform: translateY(-2px);
-    box-shadow: 0 4px 12px rgba(43, 38, 34, 0.08);
-}
-
-.read-link {
-    display: inline-flex;
-    align-items: center;
-    gap: 0.375rem;
-    padding: 0.375rem 0.75rem;
-    background-color: #2b2622;
-    color: #faf6f1;
-    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
-    font-size: 0.75rem;
-    font-weight: 600;
-    border-radius: 0.25rem;
-    white-space: nowrap;
-}
-
-.read-link svg {
-    width: 14px;
-    height: 14px;
-}
-
-.card-title {
-    font-size: 1.25rem;
-    font-weight: 700;
-    color: #2b2622;
-    margin-bottom: 0.5rem;
-}
-
-.card-description {
-    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
-    color: #524a41;
-    line-height: 1.5;
-    margin-bottom: 0.5rem;
-    font-size: 0.95rem;
-}
-
-.card-tags {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 0.5rem;
-}
-
-.card-tags span {
-    font-family: 'SF Mono', 'Fira Code', 'Consolas', monospace;
-    font-size: 0.8rem;
-    color: #8a8078;
-}
-
-/* Modal */
-.modal {
-    display: none;
-    position: fixed;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background-color: rgba(43, 38, 34, 0.5);
-    z-index: 100;
-    align-items: center;
-    justify-content: center;
-    padding: 2rem;
-}
-
-.modal.active {
-    display: flex;
-}
-
-.modal-content {
-    background-color: #faf6f1;
-    border-radius: 0.5rem;
-    max-width: 600px;
-    width: 100%;
-    max-height: 80vh;
-    overflow-y: auto;
-    padding: 2rem;
-    position: relative;
-    border: 1px solid #e3d9cd;
-    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
-}
-
-.modal-close {
-    position: absolute;
-    top: 1rem;
-    right: 1rem;
-    background: none;
-    border: none;
-    font-size: 1.75rem;
-    cursor: pointer;
-    color: #8a8078;
-    line-height: 1;
-    padding: 0.25rem;
-    transition: color 0.2s ease;
-}
-
-.modal-close:hover {
-    color: #2b2622;
-}
-
-.modal-title {
-    font-family: Georgia, serif;
-    font-size: 1.5rem;
-    font-weight: 700;
-    color: #2b2622;
-    margin-bottom: 1rem;
-    padding-right: 2rem;
-}
-
-.modal-description {
-    color: #524a41;
-    line-height: 1.6;
-    margin-bottom: 1.5rem;
-}
-
-.modal-section-title {
-    font-size: 1rem;
-    font-weight: 600;
-    color: #2b2622;
-    margin-bottom: 0.75rem;
-}
-
-.modal-features {
-    list-style: disc;
-    padding-left: 1.5rem;
-    margin-bottom: 1.5rem;
-}
-
-.modal-features li {
-    color: #524a41;
-    line-height: 1.6;
-    margin-bottom: 0.5rem;
-}
-
-.modal-tags {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 0.5rem;
-    margin-bottom: 1.5rem;
-}
-
-.modal-tag {
-    background-color: #f1e9df;
-    border: 1px solid #e3d9cd;
-    padding: 0.375rem 0.75rem;
-    border-radius: 0.25rem;
-    font-family: 'SF Mono', 'Fira Code', 'Consolas', monospace;
-    font-size: 0.8rem;
-    color: #524a41;
-}
-
-.modal-link {
-    display: inline-flex;
-    align-items: center;
-    gap: 0.5rem;
-    padding: 0.75rem 1.25rem;
-    background-color: #2b2622;
-    color: #faf6f1;
-    text-decoration: none;
-    font-weight: 600;
-    border-radius: 0.375rem;
-    transition: background-color 0.2s ease;
-}
-
-.modal-link:hover {
-    background-color: #55493d;
-}
 
 /* Footer */
 .footer {
-    border-top: 1px solid #e3d9cd;
+    border-top: 1px solid var(--c-border-footer);
     padding: 2rem 0;
 }
 
@@ -591,7 +668,7 @@ a.work-card-link:hover {
     display: inline-flex;
     align-items: center;
     gap: 0.5rem;
-    color: #524a41;
+    color: var(--c-footer-text);
     text-decoration: none;
     font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
     font-size: 0.9rem;
@@ -599,7 +676,7 @@ a.work-card-link:hover {
 }
 
 .footer-link:hover {
-    color: #2b2622;
+    color: var(--c-text);
 }
 
 .footer-meta {
@@ -608,13 +685,13 @@ a.work-card-link:hover {
 
 .footer-location {
     font-size: 0.85rem;
-    color: #8a8078;
+    color: var(--c-muted);
 }
 
 .footer-tagline {
     font-size: 0.85rem;
     font-style: italic;
-    color: #8a8078;
+    color: var(--c-muted);
 }
 
 /* Responsive Design */
